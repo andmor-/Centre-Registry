@@ -1,10 +1,7 @@
 # Changelog
 
-## [3.0.2] - TBD
-
-### New features
-- venv bundling Python inside app container
-- management command for updating certification status based on AssessmentDate
+## [3.0.3] - TBD
+- daily cronjob updating certification status based on AssessmentDate
 - email notification to maintainers about centre's certification expiring
 - well controlled vocabulary for Centre's Type Status
 - reordering admin fields according to maintainer request
@@ -12,26 +9,15 @@
 - country field changed from CharField to django_countries.CountryField
 - pruning redundant (artifacts) address fields between Centre and Consortium
 - init OpenAPI documentation of endpoints (only Centre .json endpoint so far, no trivial .xsd to OpenAPI for xml endpoints)
-- dependency bump
-- centre.type_certification_status_fk M2M bundling assessment date and certification status that were previously unrelated on the data model level
-- country in XML API source changed from consortium to centre
-- adjusted XML API template to centre.type_certification_status_fk
 
-### New dependencies
-- django-countries 7.6.1
-- django-simple-history 3.7.0
-- tzdata 2025.1
-- xmlschema 3.4.4
 
-### Dependency bumps
-- Django 4.2.11 -> 4.2.24
-- django-debug-toolbar 4.3.0 -> 5.2.0
-- django-test-migrations 1.3.0 -> 1.4.0
-- djangorestframework 3.15.1 -> 3.15.2
-- drf-spectacular 0.27.0 -> 0.28.0
-- jsonschema 4.21.1 -> 4.23.0
-- lxml 5.2.1 -> 5.3.1
-- selenium 4.19.0 -> 4.29.0
+## [3.0.2] - 19.01.2025
+- Python 3.11 to 3.12
+- added future dependencies to pytoml - django\_countries, xmlschema,
+  drf\_spectacular
+- utilise virtual runtime environment during runtime
+- replace lxml with xmlschema for schema validator (3rd party schema conflicting with lxml)
+- adjust for Python3.12 further setuptools depreciation, replace pkg_resources with importlib
 
 ## [3.0.1] - 25.04.2024
 
